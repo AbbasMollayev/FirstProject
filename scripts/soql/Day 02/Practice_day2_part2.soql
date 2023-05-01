@@ -1,0 +1,23 @@
+//Get all Contact Name and Account Name that Contact belong to
+//Filter the contact to only show contact with Account
+
+//SELECT Name, AccountId
+// FROM Contact
+// WHERE AccountId != null
+
+//SELECT Subject, Account.Name 
+//FROM Case
+
+// Get all the casre records Subject and Account Name
+// that belong to Account with Name 
+// starts with United 
+
+//SELECT Subject, Account.Name , Contact.Name, Owner.Name 
+//  FROM Case
+//  WHERE Account.Name LIKE 'United%'
+
+  // Get all opportunity Name, Owner Name, Account Name  
+// From Opportunity 
+
+SELECT Name, Owner.Name, Account.Name 
+ FROM Opportunity

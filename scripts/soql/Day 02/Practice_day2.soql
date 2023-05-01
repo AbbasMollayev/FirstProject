@@ -1,0 +1,76 @@
+// Feel free to use SOQL Building(by flipping the page)
+// to observe what's the correct Object name and fields names 
+
+// Get All the Profiles Id, Name fields 
+// if the profile name is 
+// System Administator, Standard User , Standard Platform User
+
+
+// Get All the Roles , Id, Name From Role Standard Object
+
+// SELECT Id, Name
+// FROM Profile
+// WHERE Name IN ('System Administrator' ,'Standard User' , 'Standard Platform User')
+
+//SELECT Id, Name , DeveloperName 
+// FROM UserRole
+
+// SELECT Id, Name, DeveloperName
+// FROM RecordType
+
+//SELECT  Id, Author__c, Price__c, Description__c, Year__c
+//FROM Book__c
+//WHERE Description__c != NULL
+//OR Price__c != NULL 
+
+//PARTIAL CONDITION , OR FUZZY SEARCH
+
+//RELATIONAL OPERATOR : > >= < <= != IN NOT IN
+
+//LIKE , %  ( WILD CARD, it can represent 0 or more characters )
+
+//SELECT FirstName, LastName 
+// FROM Contact
+// WHERE FirstName LIKE 'J%'
+
+// Get all contacts First Name and LastName 
+// if FirstName contains letter A  
+// We can use LIKE '%A%'  
+// it matches  Alba, Game, Apex, Battery, Alberta
+//SELECT FirstName, LastName 
+// FROM Contact
+// WHERE FirstName LIKE '%A%'
+
+// Get all contacts First Name and LastName 
+// if FirstName starts with A and Ends with Y 
+// We can use LIKE 'A%Y'  
+// it matches  Andy, Albany, Ashley, Ay, Amy
+//SELECT FirstName, LastName
+// FROM Contact
+// WHERE FirstName LIKE 'A%Y'
+
+//LIKE _ (underscore represents 1 character of any kind)
+// Get all contacts First Name and LastName 
+// if FirstName starts with A and Ends with Y 
+//AND has exactly 4 characters (meaning there are 2 characters between A and Y)
+// We can use LIKE 'A%Y'  
+// it matches  Andy, Albany, Ashley, Ay, Amy
+//SELECT FirstName, LastName
+// FROM Contact
+// WHERE FirstName LIKE 'A__Y'
+
+// Get All the contacts created Today
+//SELECT FirstName, LastName
+// FROM Contact
+// WHERE CreatedDate = Today
+
+//Get all opportunities created for the last two weeks
+//SELECT Name, CloseDate, StageName, CreatedDate 
+// FROM Opportunity
+// WHERE CreatedDate = LAST_N_WEEKS:2
+
+ // Get all the opportunity ClosedDate is Last 90 Days 
+SELECT Name, CloseDate, StageName
+ FROM Opportunity
+ WHERE CloseDate = LAST_90_DAYS
+ ORDER BY CloseDate Desc
