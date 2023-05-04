@@ -9,4 +9,16 @@ public class AsyncUtil {
    public static void boilWater(){
     System.debug('boiling water.....');
    }
+
+   @future
+    public static void updateCurrentUserRoleToCFO(){
+        Id userId = UserInfo.getUserId();
+        User u = [SELECT Id, FirstName, Division FROM USER 
+                    WHERE Id = :userId]; 
+        // update User role to CFO 
+        UserRole roleCFO = [SELECT Id,Name from UserRole Where Name='CFO']; 
+
+        u.UserRoleId = roleCFO.Id ; 
+        update u ; 
+    }
 }
