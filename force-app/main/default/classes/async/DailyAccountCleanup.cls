@@ -7,5 +7,5 @@ public class DailyAccountCleanup implements Schedulable {
             delete todaysAccounts ; 
         }
     }
-    
+    // do something more
 }
