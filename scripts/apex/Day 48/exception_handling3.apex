@@ -1,15 +1,21 @@
 System.debug('Starting the code'); 
 
+// create a save-point to go back to if something goes wrong to rollback 
+Savepoint sp = Database.setSavepoint();
+
 try {
-    
-    Account a = new Account(Name = '');
+       
+    Account a = new Account(Name='Just like a game');
     insert a ; 
+    Contact c = new Contact(LastName='HAPPY SCENARIO', AccountId = a.Id) ; 
+    insert c ; 
+
 
 } catch (DmlException e) {
-
-    System.debug('EXCEPTION OCCURRED, INSERTING ACCOUNT WITH DEFAULT NAME'); 
-    Account a = new Account(Name = 'Default Name');
-    insert a ; 
+    
+    System.debug('EXCEPTION OCCURRED ROLL BACK EVERYTHING!!!'); 
+    // Rollback to the previous point before the Account was inserted
+    Database.rollback(sp);
 
 }
 
