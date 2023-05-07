@@ -3,8 +3,7 @@ public class CaseProcessor implements Database.Batchable<sObject>, Database.Stat
     
     public Database.QueryLocator start(Database.BatchableContext context){
        
-       return Database.getQueryLocator([SELECT Id, Status, isClosed, Subject, CreatedDate, Priority 
-                                        FROM Case WHERE CreatedDate = LAST_N_DAYS:365]);
+       return Database.getQueryLocator('SELECT Id, Status, isClosed, Subject, CreatedDate, Priority FROM Case  WHERE CreatedDate = LAST_N_DAYS:365');
     }
     
     public void execute(Database.BatchableContext context, List<Case> cases ){
