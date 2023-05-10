@@ -11,14 +11,16 @@ public class House {                                         //|
    public String style;                                      //|
    public Integer year;                                      //|
    public Boolean hasGarage;                                 //|
-   public Integer squareFootage;                             //|
+   public Integer squareFootage;    
+   public String location;                         //|
                                                              //|
    public House(){     //---------------------------------------
 
    }
    
-   public House(String style){
+   public House(String style, String location){
         this.style = style;
+        this.location = location;
    }
 
    public House(String style, Integer year_c, Boolean hasGarage_c, Integer squareFootage_c){

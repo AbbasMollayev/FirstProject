@@ -37,7 +37,7 @@ private class LeadTriggerTest {
     static void testBeforeInsertNoLeadSourceNoFirstName(){
         //Arrange 
         // WE DO NOT HAVE ANY VISIBILITY TO ORG DATA IN THE TEST , WE NEED TO CREATE OUR OWN
-         List<Lead> myLeads = new List<Lead>(); 
+        List<Lead> myLeads = new List<Lead>(); 
         myLeads.add( new Lead( LastName='snow1', Company='ABC')  ); 
         myLeads.add( new Lead( LastName='snow2', Company='ABC')  ); 
         myLeads.add( new Lead( LastName='snow3', Company='ABC')  ); 
