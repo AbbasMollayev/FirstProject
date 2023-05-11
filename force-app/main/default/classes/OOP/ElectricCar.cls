@@ -1,7 +1,7 @@
 public class ElectricCar extends Car {
     public Integer batteryCapacity;
     
-    public ElectricCar(String model,Decimal price, Integer batteryCapacity){
+    public ElectricCar(String model, Integer price, Integer batteryCapacity){
         super(model,price);
         this.batteryCapacity = batteryCapacity;
     }

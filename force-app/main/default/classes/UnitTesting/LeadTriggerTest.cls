@@ -139,6 +139,9 @@ static void testAfterInsert(){
         Assert.areEqual('Jon3 SNOW3',   allLeads[2].Name    );
         //Assert.areEqual(expected,actual);
     }
+
+
+    
     @isTest
         static void testBeforeInsertScenario(){
             //Arrange

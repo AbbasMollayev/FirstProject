@@ -18,13 +18,18 @@ public class House {                                         //|
 
    }
    
+   public House(String architectureStyle){
+        this.style = architectureStyle;
+        
+   }
+
    public House(String style, String location){
         this.style = style;
         this.location = location;
    }
 
-   public House(String style, Integer year_c, Boolean hasGarage_c, Integer squareFootage_c){
-        this.style = style ; 
+   public House(String architectureStyle, Integer year_c, Boolean hasGarage_c, Integer squareFootage_c){
+        this.style = architectureStyle ; 
         this.year = year_c;
         this.hasGarage = hasGarage_c;
         this.squareFootage = squareFootage_c;
@@ -34,4 +39,8 @@ public class House {                                         //|
        System.debug('This is House!');
     }
     
+    public void owner(){
+       System.debug('No Owner Yet');  
+    }
+
 }

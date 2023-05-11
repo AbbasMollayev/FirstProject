@@ -18,3 +18,5 @@ d1.addCar(c4);
 d1.discountAllCars(14000);
 d1.showCars();
 
+ElectricCar e1 = new ElectricCar('Audi', 50000, 15);
+System.debug('e1 value is : ' + e1);
