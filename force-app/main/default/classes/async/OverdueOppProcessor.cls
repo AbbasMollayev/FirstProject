@@ -20,7 +20,7 @@ public class OverdueOppProcessor implements Database.Batchable<sObject> , Databa
     public void execute(Database.BatchableContext bc ,List<Opportunity> recordsInBatch){
 
         // increment batch number by 1 so we can see useful message 
-        ++batchNumber ; 
+        ++ batchNumber ; 
 
         System.debug('Batch number '+ batchNumber  +' Processing ' +recordsInBatch.size() + ' records here'); 
         
