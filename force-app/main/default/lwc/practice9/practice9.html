@@ -1,16 +1,14 @@
 <template>
   <lightning-card title="Practice 9 - ForEach" icon-name="utility:loop">
     <div class="slds-var-m-around_medium">
-      
       <ul>
-          <template for:each={foodArray} for:item="each">
-              <!-- Right at the first line after declaring forEach directive
+        <template for:each={foodArray} for:item="each">
+          <!-- Right at the first line after declaring forEach directive
               the first element must have an attribute called key and value as unique value -->
-             <li key={each.Id}>
-                 The name : {each.foodName} | Calorie is : {each.calories}
-             </li>
-          </template>
-
+          <li key={each.Id}>
+            The name : {each.foodName} | Calorie is : {each.calories}
+          </li>
+        </template>
       </ul>
 
       <!-- <ul>
@@ -20,9 +18,6 @@
           <li>item 4</li>
           <li>item 5</li>
       </ul> -->
-
-
     </div>
-
   </lightning-card>
 </template>

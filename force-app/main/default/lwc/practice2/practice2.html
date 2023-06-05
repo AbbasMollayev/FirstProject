@@ -1,23 +1,23 @@
 <template>
-    <lightning-card  title="Data binding" icon-name="custom:custom5">
-        <!-- Creating a container with this class attribute
+  <lightning-card title="Data binding" icon-name="custom:custom5">
+    <!-- Creating a container with this class attribute
         so anything we put inside will not be too close to the left -->
-      <div class="slds-var-m-around_medium">
-        <p> First Name : {firstName} </p>
-        <p> Last Name : {lastName} </p>
-        <!-- getter function act like property
+    <div class="slds-var-m-around_medium">
+      <p>First Name : {firstName}</p>
+      <p>Last Name : {lastName}</p>
+      <!-- getter function act like property
          you can use same way to access its value in html -->
-         <p>Full Name : {fullName}</p>
-         <lightning-input type="text" label="First Name" ></lightning-input>
-         <lightning-input type="text" label="Last Name" ></lightning-input>
+      <p>Full Name : {fullName}</p>
+      <lightning-input type="text" label="First Name"></lightning-input>
+      <lightning-input type="text" label="Last Name"></lightning-input>
 
-         <div class="slds-var-m-top_small">
-            <lightning-button  
-            label="Click Me" 
-            title="Click Me" 
-            onclick={handleClick}></lightning-button>
-         </div>
-         
+      <div class="slds-var-m-top_small">
+        <lightning-button
+          label="Click Me"
+          title="Click Me"
+          onclick={handleClick}
+        ></lightning-button>
       </div>
-    </lightning-card>
+    </div>
+  </lightning-card>
 </template>

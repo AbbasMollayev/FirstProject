@@ -1,22 +1,17 @@
-import { LightningElement } from 'lwc';
+import { LightningElement } from "lwc";
 
 export default class Practice12 extends LightningElement {
+  salary = 140000;
 
-    salary=140000;
+  handleSalaryChange(event) {
+    this.salary = event.target.value;
+  }
 
-    handleSalaryChange(event){
-        this.salary=event.target.value;
-    }
+  get notTooBad() {
+    return this.salary >= 100000 && this.salary <= 135000;
+  }
 
-    get notTooBad() {
-        return this.salary >= 100000
-              && this.salary <= 135000; 
-    }
-
-    get averageSalary() {
-        return this.salary > 135000
-        && this.salary <= 175000; 
-    }
-
-
+  get averageSalary() {
+    return this.salary > 135000 && this.salary <= 175000;
+  }
 }

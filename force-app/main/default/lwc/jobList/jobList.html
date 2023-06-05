@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="Job List" icon-name="standard:account">
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        type="search"
+        label="Search Jobs"
+        placeholder="type here..."
+        value={searchKey}
+        onchange={handleSearchKey}
+      ></lightning-input>
+      <br />
+      <template lwc:if={searchKey}>
+        <p>You are searching for {searchKey}</p>
+        <ul>
+          <template for:each={filteredJobs} for:item="each">
+            <!-- Right at the first line after declaring forEach directive
+                          the first element must have an attribute called key and value as unique value -->
+            <li key={each.Id}>
+              Job Title : {each.jobTitle} | Location is : {each.location} |
+              salary is : {each.salary}
+            </li>
+          </template>
+        </ul>
+      </template>
+    </div>
+  </lightning-card>
+</template>

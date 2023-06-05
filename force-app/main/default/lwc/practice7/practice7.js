@@ -7,13 +7,11 @@ export default class Practice7 extends LightningElement {
 
   handleHiredChange(event) {
     this.hired = event.target.checked;
-    this.promoted = this.hired && this.graduated; 
-
+    this.promoted = this.hired && this.graduated;
   }
 
   handleGraduatedChange(event) {
     this.graduated = event.target.checked;
-    this.promoted = this.hired && this.graduated; 
-    
+    this.promoted = this.hired && this.graduated;
   }
 }

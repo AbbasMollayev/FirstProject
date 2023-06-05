@@ -10,6 +10,7 @@ public with sharing class AccountController {
     //Create a static method called getAccountByName
     //parameter accName
     //return first matching Account in your salesforce org
+    @AuraEnabled(cacheable=true)
     public static Account getAccountByName(String accName){
     Account a = [SELECT Name, Id FROM ACCOUNT WHERE Name = :accName LIMIT 1];
     return a;
@@ -17,6 +18,8 @@ public with sharing class AccountController {
     // Create a static method called getAccountWithAnnualRevenue
     // @param List of accounts in your SF org 
     // with AnnualRevenue Field filled up
+    @AuraEnabled(cacheable=true)
+   
     public static List<Account> getAccountWithAnnualRevenue(){
         return [SELECT Id, Name, AnnualRevenue
                 FROM Account
@@ -46,4 +49,32 @@ Account acc = [SELECT Id,Name, (SELECT Id,Name from Opportunities)
                                  ] ;
        return acc.Opportunities ;                           
 }
+
+ /**
+     * Create a static method called getAccountsIfRevenueLessThan
+     * @param maxRevenue the upper limit of AnnualRevenue
+     * @return List<Account> that has annual revenue less than maxRevenue
+     * make it available for your lwc 
+     */
+     @AuraEnabled(cacheable=true)
+     public static List<Account> getAccountsIfRevenueLessThan(Decimal maxRevenue){
+        return [SELECT Id, Name, AnnualRevenue
+                FROM Account
+                WHERE AnnualRevenue < :maxRevenue
+                WITH SECURITY_ENFORCED
+                ];
+     }
+     /**
+     * Create a method to return Max Opportunity Amount in your org 
+     * with name getMaxOppAmount no param
+     * @return theAmount in Decimal 
+     * make it available for your LWC 
+     */
+     @AuraEnabled (cacheable=true)
+     public static Decimal getMaxOppAmount(){
+        AggregateResult result = [SELECT MAX(Amount) MaxAmount FROM Opportunity];
+        Decimal max = (Decimal) result.get('MaxAmount');
+        return max;
+     }
+
 }

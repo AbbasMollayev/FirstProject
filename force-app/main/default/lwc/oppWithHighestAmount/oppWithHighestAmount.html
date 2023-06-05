@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Richest Opportunity " icon-name="standard:opportunity">
+    <div class="slds-var-m-around_medium">
+      <template lwc:if={opportunity}>
+        <p>Name: {opportunity.Name}</p>
+        <p>Stage: {opportunity.StageName}</p>
+        <p>Amount: {opportunity.Amount}</p>
+      </template>
+      <!-- Conditionally display error : NO Account Found !! -->
+      <template lwc:elseif={error}>
+        <p>NO Opportunity was Found!!</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>

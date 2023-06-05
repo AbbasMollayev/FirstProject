@@ -1,0 +1,27 @@
+<template>
+  <lightning-card
+    title="Wired Apex Method with param Practice"
+    icon-name="standard:account"
+  >
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        type="search"
+        label="Account name to search"
+        value={searchInput}
+        onchange={handleSearchChange}
+      ></lightning-input>
+      <!-- if theAccount has value 
+                Display account name and AnnualRevenue -->
+      <!-- show the person object in pretty format -->
+      <template lwc:if={theAccount.data}>
+        <p>{theAccount.data.Name} --- {theAccount.data.AnnualRevenue}</p>
+      </template>
+      <!-- Conditionally display error : NO Account Found !! -->
+      <template lwc:elseif={theAccount.error}>
+        <p>NO Account with this name Found!!</p>
+      </template>
+
+      <pre>  {theAccountInStr}   </pre>
+    </div>
+  </lightning-card>
+</template>
