@@ -9,7 +9,7 @@ import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class Practice23edit extends LightningElement {
   objectApiName = OPP_OBJECT;
-  @api 
+  @api
   recordId;
 
   fields = [NAME_FIELD, STAGE_FIELD, CLOSE_DATE_FIELD, AMOUNT_FIELD];
