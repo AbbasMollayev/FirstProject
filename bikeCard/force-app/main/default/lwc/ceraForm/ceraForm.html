@@ -1,0 +1,33 @@
+<template>
+  <lightning-card title="Lead and Event Registration" icon-name="utility:customer">
+    <div class="slds-var-m-around_medium">
+      <lightning-input type="text" label="First Name" value={firstName} onchange={handleFirstNameChange}></lightning-input>
+      <lightning-input type="text" label="Middle Name" value={middleName} onchange={handleMiddleNameChange}></lightning-input>
+      <lightning-input type="text" label="Last Name" value={lastName} onchange={handleLastNameChange}></lightning-input>
+      <lightning-input type="text" label="Company Name" value={companyName} onchange={handleCompanyNameChange}></lightning-input>
+      <lightning-input type="text" label="Phone Number" value={phoneNumber} onchange={handlePhoneNumberChange}></lightning-input>
+      
+      <lightning-radio-group
+        label="Select Type"
+        options={recordTypeOptions}
+        value={selectedRecordType}
+        onchange={handleRecordTypeChange}
+      ></lightning-radio-group>
+
+      <template if:true={showCourseLookup}>
+        <!-- Course Lookup -->
+        <lightning-input label="Course Lookup" type="text"></lightning-input>
+      </template>
+
+      <template if:true={showEventLookup}>
+        <!-- Event Lookup -->
+        <lightning-input label="Event Lookup" type="text"></lightning-input>
+      </template>
+
+      <lightning-button-group class="slds-var-m-top_small">
+        <lightning-button label="Submit" variant="brand" onclick={createLead}></lightning-button>
+        <lightning-button label="Reset" variant="neutral" onclick={handleReset}></lightning-button>
+      </lightning-button-group>
+    </div>
+  </lightning-card>
+</template>

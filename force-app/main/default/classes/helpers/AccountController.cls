@@ -3,8 +3,9 @@ public with sharing class AccountController {
      * Create a static method called getAllAccounts
      * @return all the accounts in your salesforce org
      */
+    @AuraEnabled(cacheable=true)
     public static List<Account> getAllAccounts(){
-       return [SELECT Name, AnnualRevenue FROM Account];
+       return [SELECT Name, AnnualRevenue FROM Account ORDER BY CreatedDate DESC];
     }
 
     //Create a static method called getAccountByName
@@ -77,4 +78,14 @@ Account acc = [SELECT Id,Name, (SELECT Id,Name from Opportunities)
         return max;
      }
 
+      @AuraEnabled(cacheable=true)
+    public static List<Account> getFinancialServicesAccounts() {
+        return [SELECT Id, Name, Owner.Name, Phone, Website, AnnualRevenue FROM Account WHERE Industry = 'Finance'];
+    }
+    
+    @AuraEnabled
+    public static void updateAccount(Account account) {
+        // Perform update logic here
+        update account;
+    }
 }

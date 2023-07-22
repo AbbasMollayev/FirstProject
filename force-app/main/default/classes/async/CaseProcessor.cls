@@ -22,14 +22,14 @@ public class CaseProcessor implements Database.Batchable<sObject>, Database.Stat
         Database.update(recordsToUpdate,false);
     }
     
-    public void finish(Database.BatchableContext context){
-        Id jobId = context.getJobId();
-        AsyncApexJob asyncJob = [SELECT Id, Status, TotalJobItems, NumberOfErrors, JobItemsProcessed
-                                 FROM AsyncApexJob WHERE Id = :jobId];
-    String subject = 'The job with Id ' + jobId + ' is ' + asyncJob.Status;
-    String body = 'The job with ' + jobId + ' total records processed is ' + totalProcessed;
+    // public void finish(Database.BatchableContext context){
+    //     Id jobId = context.getJobId();
+    //     AsyncApexJob asyncJob = [SELECT Id, Status, TotalJobItems, NumberOfErrors, JobItemsProcessed
+    //                              FROM AsyncApexJob WHERE Id = :jobId];
+    // String subject = 'The job with Id ' + jobId + ' is ' + asyncJob.Status;
+    // String body = 'The job with ' + jobId + ' total records processed is ' + totalProcessed;
 
-    EmailManager.sendMail(UserInfo.getUserEmail(), subject, body);
-    }
+    // EmailManager.sendMail(UserInfo.getUserEmail(), subject, body);
+    // }
 
 }

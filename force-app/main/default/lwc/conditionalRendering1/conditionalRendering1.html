@@ -1,0 +1,12 @@
+<template>
+    <lightning-card    title="CONDITIONAL RENDERING 1" >
+        <div class="slds-var-m-around_medium">
+            <template if:true={showContent}>
+                Displayed because the value of showContent is true
+            </template>
+            <template if:false={showContent}>
+                Displayed because the value of showContent is false
+            </template>
+        </div>
+    </lightning-card>
+</template>
