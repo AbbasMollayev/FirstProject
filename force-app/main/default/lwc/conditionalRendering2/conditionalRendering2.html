@@ -6,6 +6,9 @@
               label="Enter the country you live in"
               onchange={changeHandler}
             ></lightning-input>
+            <template if:true={showContent}>
+               I live in the United States!
+            </template>
         </div>
     </lightning-card>
 </template>

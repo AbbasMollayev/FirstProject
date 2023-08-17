@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Conditional Rendering 3">
+        <div class="slds-var-m-around_medium">
+            <lightning-button 
+              variant="Success"
+              label="Click Me" 
+              onclick={clickHandler} 
+            ></lightning-button>
+            <div class="slds-var-m-around_medium">
+            <template if:true={showContent}>
+                I am the called content. <br>
+                I get displayed conditionally!
+            </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

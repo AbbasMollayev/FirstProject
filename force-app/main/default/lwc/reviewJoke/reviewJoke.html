@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="Review Joke" icon-name="standard:account">
+    <div class="slds-var-m-around_medium">
+      <lightning-button
+        variant="base"
+        label="Get Joke"
+        onclick={handleClick}
+        slot="actions"
+      ></lightning-button>
+
+      <p class="slds-text-heading_large">The Joke Goes Here {joke}</p>
+    </div>
+  </lightning-card>
+</template>
