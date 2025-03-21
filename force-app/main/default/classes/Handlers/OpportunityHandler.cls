@@ -18,7 +18,11 @@ public class OpportunityHandler {
     }
     // outside the loop , add insert one time 
         insert taskList ; 
+      
+        
   }
+
+
      public static void handleBeforeDelete(List<Opportunity> toBeDeletedOpps){
          for(Opportunity each : toBeDeletedOpps) {
       if(each.StageName == 'Closed Won'){

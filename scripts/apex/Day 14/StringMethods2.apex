@@ -136,7 +136,7 @@ for(String each : wordList) {
 
 String name = 'Mario Cruz';
 // if you split any String by empty string,
-    // you end up with list of each character
+// you end up with list of each character
 List <String> charList = name.split('');
 System.debug('charList value is : ' + charList); 
 

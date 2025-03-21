@@ -40,6 +40,6 @@ accList.add(a);
 // insert the 'Sample Account 1' and update 'Apex Inc' in Salesforce
 // upsert accList;
 
-//restore the items that deleted
+// restore the items that deleted
 // undelete accList;
 
