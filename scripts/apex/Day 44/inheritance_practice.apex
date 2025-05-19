@@ -1,7 +1,7 @@
 // THIS WILL NOT WORK , can not create object out of abstract type
 // Animal a1 = new Animal('abc',2);
 
- Dog d1 = new Dog('Sharik', 3,'Golden Retriever');
+Dog d1 = new Dog('Sharik', 3,'Golden Retriever');
 System.debug('d1 value is : ' + d1);
 d1.makeNoise() ; 
 
